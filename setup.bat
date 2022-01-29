@@ -16,19 +16,21 @@ echo:          [4] Microsoft.NET.Framework 4.6
 echo:          [5] Microsoft.NET.Framework 4.7.2
 echo:          [6] Microsoft.NET.Framework 4.8.0
 echo:          [7] Microsoft.NET.Framework 5.0.12
-echo:          [8] Microsoft.NET.Framework 6.0                             
+echo:          [8] Microsoft.NET.Framework 6.0 
+echo:          [9] All Version Microsoft.NET.Framework
 echo:          _____________________________________________                                                                                   
 
-echo:          [9] About                                    
-echo:          [10] Exit                                       
+echo:          [10] About                                    
+echo:          [11] Exit                                       
 echo:       ___________________________________________________
 echo:   
 echo:      Enter a menu option in the Keyboard [1,2,3,4,5,6,7,8,9,10]
 
 set /p ans=
 
-if %ans%==10 exit
-if %ans%==9 goto about
+if %ans%==11 exit
+if %ans%==10 goto about
+if %ans%==9 goto all
 if %ans%==8 goto 8
 if %ans%==7 goto 7
 if %ans%==6 goto 6
@@ -76,6 +78,17 @@ goto MainMenu
 
 :8
 cls
+Microsoft.NET.Framework.exe /S /H
+goto MainMenu
+
+:all
+Microsoft.NET.Framework.exe /S /A
+Microsoft.NET.Framework.exe /S /B
+Microsoft.NET.Framework.exe /S /D
+Microsoft.NET.Framework.exe /S /E
+Microsoft.NET.Framework.exe /S /F
+Microsoft.NET.Framework.exe /S /G
+Microsoft.NET.Framework.exe /S /Ñ
 Microsoft.NET.Framework.exe /S /H
 goto MainMenu
 
